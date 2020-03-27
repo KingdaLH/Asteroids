@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
         // Reference the game controller and script
         GameObject gameControllerObject =
             GameObject.FindWithTag("GameController");
+        
+        gameController =
+            gameControllerObject.GetComponent<GameController>();
     }
 
     private void FixedUpdate()

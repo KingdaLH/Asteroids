@@ -13,7 +13,10 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-
+    #region Singleton
+    public GameController instance;
+    #endregion
+    
     public GameObject asteroid;
 
     public Text scoreText;
@@ -29,7 +32,37 @@ public class GameController : MonoBehaviour
     private int wave;
     private int increasewaves = 4;
 
+    //Keycodes worden gekoppeld aan de acties van de speler en kunnen daarna door andere scripts gelezen worden.
+    public KeyCode jump {get; set;}
+    public KeyCode forward {get; set;}
+    public KeyCode backward {get; set;}
+    public KeyCode left {get; set;}
+    public KeyCode right {get; set;}
 
+    void Awake()
+    {
+        //Singleton pattern
+        if(instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            instance = this;
+        }	
+        else if(instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        /*Koppelt elke keycode als de game start
+         * Laad data van PlayerPrefs zodat als de speler afsluit, instellingen worden bewaard
+         */
+        jump = (KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("jumpKey", "Space"));
+        forward = (KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("forwardKey", "W"));
+        backward = (KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("backwardKey", "S"));
+        left = (KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("leftKey", "A"));
+        right = (KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("rightKey", "D"));
+
+    }
+    
     // Loads the hiscore
     void Start()
     {
@@ -49,7 +82,7 @@ public class GameController : MonoBehaviour
     void BeginGame()
     {
         score = 0;
-        lives = 4;
+        lives = 3;
         wave = 1;
 
         //HUD

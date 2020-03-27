@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
+
 public class AsteroidController : MonoBehaviour
 {
     public AudioClip destroy;
@@ -13,7 +14,7 @@ public class AsteroidController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // References the game manager object and and scrpt
+        // References the game manager object and and script
         GameObject gameControllerObject =
             GameObject.FindWithTag("GameController");
 
@@ -33,9 +34,6 @@ public class AsteroidController : MonoBehaviour
     {
         if (c.gameObject.tag.Equals("Bullet"))
         {
-            // Destroy the bullet
-            Destroy(c.gameObject);
-            
             // If large asteroid spawn new ones
             if (tag.Equals("Large Asteroid"))
             {
