@@ -4,8 +4,14 @@ using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
+using System.Net.Mime;
+using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameController : MonoBehaviour
 {
 
     public GameObject asteroid;

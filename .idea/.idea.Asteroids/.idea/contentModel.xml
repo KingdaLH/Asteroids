@@ -7,8 +7,13 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="Controllers" t="Include">
+            <e p="AsteroidController.cs" t="Include" />
+            <e p="BulletController.cs" t="Include" />
+            <e p="GameController.cs" t="Include" />
+            <e p="PlayerController.cs" t="Include" />
+          </e>
           <e p="EuclideanTorus.cs" t="Include" />
-          <e p="GameManager.cs" t="Include" />
         </e>
       </e>
       <e p="Asteroids.sln" t="IncludeFlat" />

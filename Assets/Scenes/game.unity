@@ -284,8 +284,8 @@ GameObject:
   - component: {fileID: 595776559}
   - component: {fileID: 595776560}
   m_Layer: 0
-  m_Name: Game Manager
-  m_TagString: GameManager
+  m_Name: Game Controller
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
