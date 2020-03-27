@@ -14,8 +14,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip shoot;
 
     public GameObject bullet;
-    
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,9 +32,9 @@ public class PlayerController : MonoBehaviour
         GetComponent<Rigidbody2D>().AddForce(transform.up * thrustForce * Input.GetAxis("Vertical"));
         
         // Shoots bullet
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("Jump"))
         {
-            shootBullet();
+            ShootBullet();
         }
     }
 
@@ -56,7 +55,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void shootBullet()
+    private void ShootBullet()
     {
         // Spawn a bullet object from the prefabs
         Instantiate(bullet, new Vector3(transform.position.x, transform.position.y, 0),

@@ -137,7 +137,7 @@ public class GameController : MonoBehaviour
 
         foreach (GameObject current in asteroids)
         {
-            GameObject.Destroy(current);
+            Destroy(current);
         }
 
         GameObject[] asteroids2 =
@@ -145,7 +145,7 @@ public class GameController : MonoBehaviour
 
         foreach (GameObject current in asteroids2)
         {
-            GameObject.Destroy(current);
+            Destroy(current);
         }
     }
 }

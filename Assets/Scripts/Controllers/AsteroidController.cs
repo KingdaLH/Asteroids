@@ -15,7 +15,7 @@ public class AsteroidController : MonoBehaviour
     {
         // References the game manager object and and scrpt
         GameObject gameControllerObject =
-            GameObject.FindWithTag("Game Manager");
+            GameObject.FindWithTag("GameController");
 
         gameController =
             gameControllerObject.GetComponent<GameController>();
