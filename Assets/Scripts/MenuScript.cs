@@ -39,7 +39,6 @@ public class MenuScript : MonoBehaviour
 		}
 	}
 
-
 	void Update ()
 	{
 		//Escape knop opent en sluit het menu
