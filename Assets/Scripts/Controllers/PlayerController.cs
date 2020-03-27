@@ -28,14 +28,32 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Rotate the ship
-        transform.Rotate(0, 0, -Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime);
+        if (Input.GetKey(GameController.instance.forward))
+        {
+            // Thrust the ship forward
+            GetComponent<Rigidbody2D>().AddForce(transform.up * thrustForce);
+        }
+
+        if (Input.GetKey(GameController.instance.backward))
+        {
+            // Thrust the ship backward
+            GetComponent<Rigidbody2D>().AddForce(-transform.up * thrustForce);
+        }
+
+        if (Input.GetKey(GameController.instance.left))
+        {
+            // Rotate the ship left
+            transform.Rotate(0, 0,rotationSpeed * Time.deltaTime);
+        }
         
-        // Thrust the ship
-        GetComponent<Rigidbody2D>().AddForce(transform.up * thrustForce * Input.GetAxis("Vertical"));
-        
+        if (Input.GetKey(GameController.instance.right))
+        {
+            // Rotate the ship right
+            transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
+        }
+
         // Shoots bullet
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetKey(GameController.instance.jump))
         {
             ShootBullet();
         }

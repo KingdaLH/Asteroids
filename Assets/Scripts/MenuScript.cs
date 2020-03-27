@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour
 {
-
-	public GameController instance;
 	[SerializeField] Transform menuPanel;
 	Event keyEvent;
 	Text buttonText;
@@ -57,7 +55,7 @@ public class MenuScript : MonoBehaviour
 		
 		if(keyEvent.isKey && waitingForKey)
 		{
-			newKey = keyEvent.keyCode; //koppelt de nieuwe knop die de speler  indrukt
+			newKey = keyEvent.keyCode; //koppelt de nieuwe knop die de speler indrukt
 			waitingForKey = false;
 		}
 	}

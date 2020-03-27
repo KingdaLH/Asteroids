@@ -13,7 +13,12 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    #region Singleton
+    
     public static GameController instance;
+    
+    #endregion
+    
     public GameObject asteroid;
 
     public Text scoreText;
