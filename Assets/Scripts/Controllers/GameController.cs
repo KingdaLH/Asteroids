@@ -72,15 +72,6 @@ public class GameController : MonoBehaviour
         BeginGame();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        /* Stops when the player presses escape
-        if (Input.GetKey("escape"))
-            Application.Quit();
-            */
-    }
-
     // Sets all variables and text objects
     void BeginGame()
     {
