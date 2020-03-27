@@ -2,8 +2,10 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class MenuScript : MonoBehaviour {
+public class MenuScript : MonoBehaviour
+{
 
+	public GameController instance;
 	[SerializeField] Transform menuPanel;
 	Event keyEvent;
 	Text buttonText;
@@ -61,10 +63,7 @@ public class MenuScript : MonoBehaviour {
 		}
 	}
 
-	/*Buttons kunnen niet  Coroutines via OnClick() starten.
-	 * Daarom maken gebruiken wij in de plaats daarvan deze functie
-	 * die vervolgens de Coroutine binnen in dit script aanroept
-	 */
+	//Starts co-routine
 	public void StartAssignment(string keyName)
 	{
 		if(!waitingForKey)
@@ -77,7 +76,7 @@ public class MenuScript : MonoBehaviour {
 		buttonText = text;
 	}
 
-	//Wordt gebruikt voor afwachten van een ingedrukte toets
+	//Afwachten van een ingedrukte toets
 	IEnumerator WaitForKey()
 	{
 		while(!keyEvent.isKey)

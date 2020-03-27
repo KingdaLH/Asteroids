@@ -13,10 +13,7 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    #region Singleton
-    public GameController instance;
-    #endregion
-    
+    public static GameController instance;
     public GameObject asteroid;
 
     public Text scoreText;
@@ -74,7 +71,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
         // Stops when the player presses escape
-        if (Input.GetKey("escape"))
+        if (Input.GetKey("enter"))
             Application.Quit();
     }
 
